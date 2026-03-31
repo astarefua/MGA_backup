@@ -7,7 +7,7 @@ st.set_page_config(page_title="Market Gap Analysis", layout="wide")
 
 @st.cache_data
 def load_data():
-    url = "https://raw.githubusercontent.com/astarefua/The-Market-Gap-Analysis/main/clean_food_data.csv"
+    url = "https://raw.githubusercontent.com/astarefua/MGA_backup/main/clean_food_data.csv"
     df = pd.read_csv(url)
     return df
 
