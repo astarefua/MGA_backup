@@ -2,44 +2,13 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-from collections import Counter
 
 st.set_page_config(page_title="Market Gap Analysis", layout="wide")
 
 @st.cache_data
 def load_data():
-    url = "https://static.openfoodfacts.org/data/en.openfoodfacts.org.products.csv.gz"
-    cols = ["product_name","categories_tags","ingredients_text",
-            "sugars_100g","proteins_100g","fat_100g","fiber_100g","energy_100g"]
-    df = pd.read_csv(url, sep="\t", on_bad_lines="skip",
-                     nrows=500000, low_memory=False,
-                     compression="gzip", usecols=cols)
-    df = df.dropna(subset=["product_name","sugars_100g","proteins_100g"])
-    df = df[
-        (df["sugars_100g"]   >= 0) & (df["sugars_100g"]   <= 100) &
-        (df["proteins_100g"] >= 0) & (df["proteins_100g"] <= 100) &
-        (df["fat_100g"]      >= 0) & (df["fat_100g"]      <= 100)
-    ].reset_index(drop=True)
-
-    def assign_category(tags):
-        if pd.isnull(tags): return "Unknown"
-        tags = tags.lower()
-        if any(w in tags for w in ["protein","whey","sport","fitness","muscle"]):
-            return "Sports & Protein"
-        elif any(w in tags for w in ["biscuit","cookie","chocolate","candy","sweet","sugar","snack","chips","crisp"]):
-            return "Sweet & Sugary Snacks"
-        elif any(w in tags for w in ["yogurt","yoghurt","dairy","cheese","milk","cream"]):
-            return "Dairy"
-        elif any(w in tags for w in ["bread","pasta","grain","cereal","rice","flour","oat"]):
-            return "Grains & Carbs"
-        elif any(w in tags for w in ["meat","chicken","beef","fish","seafood","sausage","poultry"]):
-            return "Meat & Fish"
-        elif any(w in tags for w in ["vegetable","fruit","legume","bean","nut","seed","plant"]):
-            return "Fruits, Veg & Nuts"
-        else:
-            return "Other"
-
-    df["primary_category"] = df["categories_tags"].apply(assign_category)
+    url = "https://raw.githubusercontent.com/astarefua/The-Market-Gap-Analysis/main/clean_food_data.csv"
+    df = pd.read_csv(url)
     return df
 
 # ── HEADER ─────────────────────────────────────────────────────────
@@ -48,7 +17,7 @@ st.markdown("**Client:** Helix CPG Partners | **Analyst:** Esther")
 st.markdown("---")
 
 # ── LOAD DATA ──────────────────────────────────────────────────────
-with st.spinner("Loading and processing data... (this takes 2-3 mins on first load)"):
+with st.spinner("Loading data..."):
     df = load_data()
 
 # ── KEY INSIGHT BOX ────────────────────────────────────────────────
@@ -92,7 +61,7 @@ fig1.add_hline(y=15, line_dash="dash", line_color="gray",
                annotation_text="High Protein threshold")
 fig1.add_vline(x=10, line_dash="dash", line_color="gray",
                annotation_text="Low Sugar threshold")
-st.plotly_chart(fig1, width="stretch")
+st.plotly_chart(fig1, use_container_width=True)
 st.markdown("---")
 
 # ── MARKET SATURATION INDEX ─────────────────────────────────────────
@@ -134,7 +103,7 @@ fig2.update_layout(
     plot_bgcolor="white",
     yaxis=dict(gridcolor="#eeeeee")
 )
-st.plotly_chart(fig2, width="stretch")
+st.plotly_chart(fig2, use_container_width=True)
 st.markdown("---")
 
 # ── TOP PROTEIN SOURCES ────────────────────────────────────────────
@@ -155,4 +124,4 @@ fig3 = px.bar(
     color_continuous_scale=["#9FE1CB","#0F6E56"]
 )
 fig3.update_layout(plot_bgcolor="white", yaxis=dict(categoryorder="total ascending"))
-st.plotly_chart(fig3, width="stretch")
+st.plotly_chart(fig3, use_container_width=True)
