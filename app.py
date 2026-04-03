@@ -158,7 +158,7 @@ else:
 st.divider()
 
 # ── Two charts side by side ───────────────────────────────────
-left, right = st.columns(2)
+# left, right = st.columns(2)
 
 # Left — category breakdown
 # with left:
