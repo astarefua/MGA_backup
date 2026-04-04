@@ -247,17 +247,17 @@ if len(blue_ocean) > 0:
         f"high-protein, low-sugar space — confirming a significant Blue Ocean opportunity."
     )
 
-    # Show the actual blue ocean products as a table
-    with st.expander("View Blue Ocean products in the dataset"):
-        bo_display = (
-            blue_ocean[['product_name', 'primary_category',
-                        'proteins_100g', 'sugars_100g', 'fat_100g', 'nutriscore_grade']]
-            .sort_values('proteins_100g', ascending=False)
-            .reset_index(drop=True)
-        )
-        bo_display.columns = ['Product', 'Category', 'Protein (g)', 'Sugar (g)',
-                              'Fat (g)', 'Nutri-Score']
-        st.dataframe(bo_display, use_container_width=True)
+    # # Show the actual blue ocean products as a table
+    # with st.expander("View Blue Ocean products in the dataset"):
+    #     bo_display = (
+    #         blue_ocean[['product_name', 'primary_category',
+    #                     'proteins_100g', 'sugars_100g', 'fat_100g', 'nutriscore_grade']]
+    #         .sort_values('proteins_100g', ascending=False)
+    #         .reset_index(drop=True)
+    #     )
+    #     bo_display.columns = ['Product', 'Category', 'Protein (g)', 'Sugar (g)',
+    #                           'Fat (g)', 'Nutri-Score']
+    #     st.dataframe(bo_display, use_container_width=True)
 else:
     st.info("No Blue Ocean products found with current filters.")
 
