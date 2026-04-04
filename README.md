@@ -11,8 +11,8 @@ products currently occupy the high-protein (>15g), low-sugar (<10g) space.
 The market is heavily dominated by Candy & Chocolate products (42.1% of all
 snacks), with an average sugar content of 26.2g per 100g across the entire
 snack aisle — more than three times the average protein content of 7.5g.
-The biggest market opportunity lies in the Protein & Sport and Nuts & Seeds
-categories, where demand for healthier, high-protein snacking is not being met
+The biggest market opportunity lies in the Nuts & Seeds
+category, where demand for healthier, high-protein snacking is not being met
 by current product offerings.
 A new snack product targeting above 15g protein and below 10g sugar would
 face minimal direct competition and would serve a fast-growing consumer segment
@@ -24,7 +24,7 @@ prioritising functional nutrition over indulgence.
 
 - **Notebook:** [Google Colab — Sugar Trap EDA](https://colab.research.google.com/drive/1K7FcNy8eb1EWa2bN8-bXSYfmUSBBtYQG?usp=sharing)
 - **Dashboard:** [Streamlit — Sugar Trap Dashboard](https://mgabackup-psh4scjtimzsa23etkgkge.streamlit.app/)
-- **Presentation:** [Slide Deck — PDF](https://docs.google.com/presentation/d/1RxoP9kWHC3ZXh0K-fgxg1GWUm4BXHj4nqy2Li-4z-Gk/edit?usp=sharing)
+- **Presentation:** [Slide Deck — PDF](https://docs.google.com/presentation/d/1vCXjfQZy568ZCLzTAR1C9HUx-wA7SRHJi90C57k5i0Q/edit?usp=sharing)
 
 
 > All links are publicly accessible. Verified in incognito mode.
