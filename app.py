@@ -209,7 +209,7 @@ if len(blue_ocean) > 0:
     avg_sugar = round(blue_ocean['sugars_100g'].mean(), 1)
 
     st.success(
-        f"📊 Based on the data , the biggest market "
+        f"Based on the data , the biggest market "
         f"opportunity is in **{top_cat}**, specifically targeting products with "
         f"**{avg_prot}g of protein** and less than **{avg_sugar}g of sugar**. "
     )
