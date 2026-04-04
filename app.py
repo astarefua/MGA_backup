@@ -197,37 +197,6 @@ if True:
 
 st.divider()
 
-# ── Nutri-Score breakdown ─────────────────────────────────────
-# st.subheader("Nutri-Score Distribution")
-# st.caption("How healthy is the current snack market? A = healthiest, E = least healthy")
-
-# nutri = (
-#     filtered['nutriscore_grade']
-#     .str.lower().str.strip()
-#     .pipe(lambda s: s[s.isin(['a', 'b', 'c', 'd', 'e'])])
-# )
-# grade_counts = nutri.value_counts().reindex(['a', 'b', 'c', 'd', 'e']).fillna(0)
-# grade_colors = {'a': '#27ae60', 'b': '#82c341', 'c': '#f4d03f',
-#                 'd': '#e67e22', 'e': '#e74c3c'}
-
-# fig4, ax4 = plt.subplots(figsize=(8, 3.5))
-# bars = ax4.bar(
-#     grade_counts.index,
-#     grade_counts.values,
-#     color=[grade_colors[g] for g in grade_counts.index],
-#     edgecolor='white', width=0.6
-# )
-# for bar, n in zip(bars, grade_counts.values):
-#     if n > 0:
-#         ax4.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 10,
-#                  f'{int(n):,}', ha='center', fontsize=10)
-# ax4.set_xlabel('Nutri-Score Grade')
-# ax4.set_ylabel('Number of products')
-# ax4.grid(axis='y', alpha=0.3)
-# ax4.spines[['top', 'right']].set_visible(False)
-
-# st.pyplot(fig4)
-# plt.close()
 
 # st.divider()
 
@@ -243,21 +212,8 @@ if len(blue_ocean) > 0:
         f"📊 Based on the data , the biggest market "
         f"opportunity is in **{top_cat}**, specifically targeting products with "
         f"**{avg_prot}g of protein** and less than **{avg_sugar}g of sugar**. "
-        # f"Only **{blue_ocean_pct:.1f}%** of current products occupy this "
-        # f"high-protein, low-sugar space — confirming a significant Blue Ocean opportunity."
     )
 
-    # # Show the actual blue ocean products as a table
-    # with st.expander("View Blue Ocean products in the dataset"):
-    #     bo_display = (
-    #         blue_ocean[['product_name', 'primary_category',
-    #                     'proteins_100g', 'sugars_100g', 'fat_100g', 'nutriscore_grade']]
-    #         .sort_values('proteins_100g', ascending=False)
-    #         .reset_index(drop=True)
-    #     )
-    #     bo_display.columns = ['Product', 'Category', 'Protein (g)', 'Sugar (g)',
-    #                           'Fat (g)', 'Nutri-Score']
-    #     st.dataframe(bo_display, use_container_width=True)
 else:
     st.info("No Blue Ocean products found with current filters.")
 
