@@ -240,11 +240,11 @@ if len(blue_ocean) > 0:
     avg_sugar = round(blue_ocean['sugars_100g'].mean(), 1)
 
     st.success(
-        f"📊 Based on **{len(df):,} snack products** analysed, the biggest market "
+        f"📊 Based on the data , the biggest market "
         f"opportunity is in **{top_cat}**, specifically targeting products with "
         f"**{avg_prot}g of protein** and less than **{avg_sugar}g of sugar**. "
-        f"Only **{blue_ocean_pct:.1f}%** of current products occupy this "
-        f"high-protein, low-sugar space — confirming a significant Blue Ocean opportunity."
+        # f"Only **{blue_ocean_pct:.1f}%** of current products occupy this "
+        # f"high-protein, low-sugar space — confirming a significant Blue Ocean opportunity."
     )
 
     # # Show the actual blue ocean products as a table
