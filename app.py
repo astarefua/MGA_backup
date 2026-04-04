@@ -158,37 +158,10 @@ else:
 st.divider()
 
 # ── Two charts side by side ───────────────────────────────────
-# left, right = st.columns(2)
 
 # Left — category breakdown
-# with left:
-#     st.markdown("<h4 style='margin-bottom:0'>Products per category</h4>", unsafe_allow_html=True)
-#     st.caption("Distribution of snack products across categories in the dataset")
-#     cat_counts = filtered['primary_category'].value_counts()
-
-#     fig2, ax2 = plt.subplots(figsize=(6, 5))
-#     if cat_counts.empty:
-#         ax2.text(0.5, 0.5, 'No categories selected',
-#                  ha='center', va='center', fontsize=12)
-#         ax2.axis('off')
-#     else:
-#         colors = [PALETTE.get(c, '#95a5a6') for c in cat_counts.index]
-#         bars = ax2.barh(cat_counts.index, cat_counts.values,
-#                         color=colors, edgecolor='white', height=0.65)
-#         for bar, n in zip(bars, cat_counts.values):
-#             ax2.text(bar.get_width() + 8, bar.get_y() + bar.get_height()/2,
-#                      f'{n:,}', va='center', fontsize=9)
-#         ax2.set_xlabel('Number of products')
-#         ax2.set_xlim(0, cat_counts.max() * 1.15)
-#         ax2.grid(axis='x', alpha=0.3)
-#         ax2.spines[['top', 'right']].set_visible(False)
-
-#     st.pyplot(fig2)
-#     plt.close()
-    
-
 # Right — nutritional fingerprint heatmap
-# with right:
+if True:
     st.markdown("<h4 style='margin-bottom:0'>Nutritional fingerprint by category</h4>", unsafe_allow_html=True)
     st.caption("Candidate's choice — avg Sugar, Protein & Fat per segment for R&D")
     heat_data = (
@@ -201,7 +174,7 @@ st.divider()
         .sort_values('Protein', ascending=False)
     )
 
-    fig3, ax3 = plt.subplots(figsize=(6, 5))
+    fig3, ax3 = plt.subplots(figsize=(10, 5))
     if heat_data.empty:
         ax3.text(0.5, 0.5, 'No categories selected',
                  ha='center', va='center', fontsize=12)
