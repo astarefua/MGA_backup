@@ -23,7 +23,7 @@ prioritising functional nutrition over indulgence.
 ## B. Project Links
 
 - **Notebook:** [Google Colab — Sugar Trap EDA](https://colab.research.google.com/drive/1K7FcNy8eb1EWa2bN8-bXSYfmUSBBtYQG?usp=sharing)
-- **Dashboard:** [Streamlit — Sugar Trap Dashboard](https://mgabackup-psh4scjtimzsa23etkgkge.streamlit.app/)
+- **Dashboard:** [Streamlit — Sugar Trap Dashboard](https://sugartrapmarketgapanalysis-jekujpgrrr84czx6ehh2mm.streamlit.app/)
 - **Presentation:** [Slide Deck — PDF](https://docs.google.com/presentation/d/1vCXjfQZy568ZCLzTAR1C9HUx-wA7SRHJi90C57k5i0Q/edit?usp=sharing)
 
 
